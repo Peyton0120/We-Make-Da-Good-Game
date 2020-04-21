@@ -6,15 +6,15 @@ public class axe : MonoBehaviour
 {
 
     public float speed = 20f;
-    public float vspeed = 20f;
     public Rigidbody2D rb;
 
-    // Start is called before the first frame update
+    // Physics for axe
     void Start()
     {
         rb.velocity = transform.right * speed;
     }
 
+    //Check for collision and hurt the boss and destroy axe 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Master master = hitInfo.GetComponent<Master>();

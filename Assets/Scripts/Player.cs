@@ -11,17 +11,21 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     public bool axeActive = false;
 
+    //Sets current health to max health at start
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
+    
+    //Takes a set amount of damage
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
 
+    //Calls TakeDamage and checks for death
     public void Hurt()
     {
         TakeDamage(1);
@@ -31,6 +35,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Restores health
     void Heal()
     {
         if (currentHealth<= 3)
@@ -38,6 +43,8 @@ public class Player : MonoBehaviour
             TakeDamage(-1);
         }
     }
+    
+    //Instant death from invisible pit
     void Fall()
     {
         TakeDamage(4);
@@ -46,6 +53,8 @@ public class Player : MonoBehaviour
             Application.LoadLevel(Application.loadedLevel);
         }
     }
+    
+    //Checks collision to take damage, heal, or rach the goal
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Master cross = collision.collider.GetComponent<Master>();

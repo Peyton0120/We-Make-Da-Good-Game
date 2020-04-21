@@ -12,18 +12,21 @@ public class Master : MonoBehaviour
 	public int currentHealth = 50;
 	public HealthBar healthBar;
 
+	//Sets current health to max health at entry
 	void Start()
 	{
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
 	}
 
+	//Resets healthbar to current health
 	void TakeDamage(int damage)
 	{
 		currentHealth -= damage;
 		healthBar.SetHealth(currentHealth);
 	}
 
+	//Deals damage and checks for death
 	public void Hurt()
 	{
 		TakeDamage(2);
@@ -33,6 +36,7 @@ public class Master : MonoBehaviour
 		}
 	}
 
+	//Checks player position and flips movement accordingly
 	public void LookAtPlayer()
 	{
 		Vector3 flipped = transform.localScale;
@@ -53,6 +57,7 @@ public class Master : MonoBehaviour
 	}
 	
 
+	//Spawns a cross
 	void shoot()
 	{ 
 			Instantiate(crossPrefab, firePoint.position, firePoint.rotation);

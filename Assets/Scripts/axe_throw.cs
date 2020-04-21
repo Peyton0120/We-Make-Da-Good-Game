@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class axe_throw : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public Transform firePoint;
     public GameObject axePrefab;
     public Player player;
 
-    // Update is called once per frame
+    //Check for input and throw axe
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -19,6 +17,7 @@ public class axe_throw : MonoBehaviour
         }
     }
 
+    //checks if and where to throw the axe
     void shoot()
     {
         if(player.axeActive == true)
