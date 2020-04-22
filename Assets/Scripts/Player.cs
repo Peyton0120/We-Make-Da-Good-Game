@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public int currentHealth = 4;
     public HealthBar healthBar;
     public bool axeActive = false;
+    public float invincibilityTime;
+    public float timer;
 
     //Sets current health to max health at start
     void Start()
@@ -32,6 +34,21 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0)
         {
             Application.LoadLevel(Application.loadedLevel);
+        }
+        timer = invincibilityTime;
+    }
+
+    private void Update()
+    {
+        if (timer > 0)
+        {
+            timer = timer - Time.fixedDeltaTime;
+            gameObject.layer = 15;
+        }
+        else if (timer <= 0)
+        {
+            timer = 0;
+            gameObject.layer = 11;
         }
     }
 

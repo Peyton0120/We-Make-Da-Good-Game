@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1235651244980001094}
   - component: {fileID: 1235651244980001095}
   - component: {fileID: 1235651244980001088}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Imp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1235651246072728527}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ground Detection
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}

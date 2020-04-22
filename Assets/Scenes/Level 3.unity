@@ -8954,6 +8954,8 @@ MonoBehaviour:
   currentHealth: 4
   healthBar: {fileID: 7029712090765410028}
   axeActive: 0
+  invincibilityTime: 0.5
+  timer: 0
 --- !u!95 &5700864680132698995
 Animator:
   serializedVersion: 3
